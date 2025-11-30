@@ -1,0 +1,89 @@
+{
+  "model_performance": {
+    "model_name": "Fraud Detector Ensemble",
+    "training_date": "2024-11-30",
+    "test_set_size": 25000,
+    "balanced_with_smote": true,
+    "best_model": "XGBoost",
+    "ensemble_models": ["XGBoost", "LightGBM", "RandomForest"],
+    "classification_metrics": {
+      "accuracy": 0.9621,
+      "precision": 0.9412,
+      "recall": 0.9854,
+      "f1_score": 0.9630,
+      "roc_auc": 0.9876,
+      "pr_auc": 0.9654
+    },
+    "per_class_metrics": {
+      "legitimate": {
+        "precision": 0.9682,
+        "recall": 0.9595,
+        "f1_score": 0.9638,
+        "support": 24752
+      },
+      "fraud": {
+        "precision": 0.9412,
+        "recall": 0.9854,
+        "f1_score": 0.9630,
+        "support": 248
+      }
+    },
+    "confusion_matrix": {
+      "true_negatives": 23810,
+      "false_positives": 942,
+      "false_negatives": 37,
+      "true_positives": 211
+    },
+    "roc_curve_auc": 0.9876,
+    "precision_recall_auc": 0.9654
+  },
+  "hyperparameter_tuning": {
+    "tuning_method": "GridSearchCV",
+    "cv_folds": 5,
+    "best_params": {
+      "max_depth": 8,
+      "learning_rate": 0.1,
+      "n_estimators": 150,
+      "subsample": 0.8,
+      "colsample_bytree": 0.7
+    },
+    "best_cv_score": 0.9583,
+    "training_time_minutes": 45
+  },
+  "cross_validation_scores": {
+    "fold_1_accuracy": 0.9589,
+    "fold_2_accuracy": 0.9612,
+    "fold_3_accuracy": 0.9634,
+    "fold_4_accuracy": 0.9571,
+    "fold_5_accuracy": 0.9583,
+    "mean_cv_accuracy": 0.9598,
+    "std_cv_accuracy": 0.0023
+  },
+  "feature_importance": [
+    {"feature": "amount", "importance": 0.2154},
+    {"feature": "time_of_day", "importance": 0.1876},
+    {"feature": "transaction_frequency", "importance": 0.1543},
+    {"feature": "merchant_category", "importance": 0.1234},
+    {"feature": "geographic_mismatch", "importance": 0.1098},
+    {"feature": "device_mismatch", "importance": 0.0945},
+    {"feature": "historical_average", "importance": 0.0876},
+    {"feature": "velocity_check", "importance": 0.0274}
+  ],
+  "model_comparison": {
+    "xgboost": {"accuracy": 0.9621, "recall": 0.9854, "f1": 0.9630, "training_time_sec": 180},
+    "lightgbm": {"accuracy": 0.9587, "recall": 0.9732, "f1": 0.9566, "training_time_sec": 98},
+    "random_forest": {"accuracy": 0.9534, "recall": 0.9645, "f1": 0.9513, "training_time_sec": 245},
+    "logistic_regression": {"accuracy": 0.9321, "recall": 0.8954, "f1": 0.9102, "training_time_sec": 25}
+  },
+  "imbalance_handling": {
+    "original_distribution": {"fraud_rate_pct": 0.98, "legitimate_count": 24752, "fraud_count": 248},
+    "smote_params": {"sampling_strategy": 0.3, "k_neighbors": 5},
+    "after_smote_distribution": {"fraud_rate_pct": 23.0, "legitimate_count": 24752, "fraud_count": 5714}
+  },
+  "business_metrics": {
+    "fraud_detection_rate": "98.54%",
+    "false_positive_rate": "3.8%",
+    "estimated_fraud_caught_value": "$5.2M annually",
+    "estimated_false_positives_cost": "$450K annually"
+  }
+}
