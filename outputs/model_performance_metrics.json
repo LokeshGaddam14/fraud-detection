@@ -1,0 +1,80 @@
+{
+  "project": "IEEE-CIS Fraud Detection",
+  "dataset": {
+    "source": "IEEE-CIS Kaggle Competition",
+    "total_transactions": 655858,
+    "fraud_cases": 85981,
+    "fraud_rate_pct": 13.11,
+    "features_original": 366,
+    "features_engineered": 366
+  },
+  "best_model": "XGBoost",
+  "threshold_default_0_5": {
+    "roc_auc": 0.9626,
+    "pr_auc": 0.808,
+    "recall": 0.567,
+    "precision": 0.9523,
+    "f1_score": 0.7108,
+    "tp": 1757,
+    "fp": 88,
+    "fn": 1342,
+    "tn": 85394
+  },
+  "threshold_optimized": {
+    "threshold": 0.03,
+    "recall": 0.9003,
+    "precision": 0.2442,
+    "tp": 2790,
+    "fp": 8634,
+    "fn": 309,
+    "tn": 76848
+  },
+  "cv_results": {
+    "XGBoost": {
+      "mean_auc": 0.9899,
+      "std_auc": 0.0002
+    },
+    "LightGBM": {
+      "mean_auc": 0.9877,
+      "std_auc": 0.0001
+    },
+    "RandomForest": {
+      "mean_auc": 0.9792,
+      "std_auc": 0.0005
+    },
+    "LogisticRegression": {
+      "mean_auc": 0.6998,
+      "std_auc": 0.0026
+    }
+  },
+  "model_comparison": {
+    "XGBoost": {
+      "ROC_AUC": 0.9463,
+      "PR_AUC": 0.7404,
+      "Recall": 0.4931,
+      "Precision": 0.9283,
+      "F1": 0.644
+    },
+    "LightGBM": {
+      "ROC_AUC": 0.9351,
+      "PR_AUC": 0.6984,
+      "Recall": 0.453,
+      "Precision": 0.9135,
+      "F1": 0.6057
+    },
+    "RandomForest": {
+      "ROC_AUC": 0.8905,
+      "PR_AUC": 0.5797,
+      "Recall": 0.3527,
+      "Precision": 0.8944,
+      "F1": 0.5059
+    },
+    "LogisticRegression": {
+      "ROC_AUC": 0.6965,
+      "PR_AUC": 0.0865,
+      "Recall": 0.0542,
+      "Precision": 0.1665,
+      "F1": 0.0818
+    }
+  }
+}
