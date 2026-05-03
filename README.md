@@ -1,4 +1,5 @@
-# 💳 Financial Transaction Fraud Detection
+# 💳 Financial Transaction Fraud Detection 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mZSK9Hu_iqMmsLYbgaCvDy4A-pZ3grsG?usp=sharing)
 ### IEEE-CIS Dataset · 590,540 Transactions · XGBoost + LightGBM + SHAP Explainability
 
 [![Python](https://img.shields.io/badge/Python-3.9-blue)](https://python.org)
